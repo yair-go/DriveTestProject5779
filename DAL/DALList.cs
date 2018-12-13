@@ -16,8 +16,11 @@ namespace DAL
         {
             get { return instance; }
         }
+
+        private DALList() { }
         #endregion
 
+        #region Tester
         public void AddTester()
         {
             throw new NotImplementedException();
@@ -38,15 +41,17 @@ namespace DAL
         {
             DataSource.testers.Add(t);
         }
+        public List<Tester> getAllTesters()
+        {
+            return DataSource.testers;
+        }
+        #endregion
 
         public void addTrainee(string id, string name, int age)
         {
             Trainee t = new Trainee(id, name, age);
         }
 
-        public List<Tester> getAllTesters()
-        {
-            return DataSource.testers;
-        }
+       
     }
 }

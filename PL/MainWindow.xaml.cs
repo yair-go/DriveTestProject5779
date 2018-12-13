@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BL;
+using BE;
 
 namespace PL
 {
@@ -20,9 +22,13 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MyBL bl;
         public MainWindow()
         {
             InitializeComponent();
+            bl = MyBL.Instance;
+
+            bl.addTester(new Tester("Nadav", 40));
         }
     }
 }
