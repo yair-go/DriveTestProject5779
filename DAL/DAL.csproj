@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DALList.cs" />
+    <Compile Include="DALTools.cs" />
+    <Compile Include="FactoryDAL.cs" />
     <Compile Include="IDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

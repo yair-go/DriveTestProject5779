@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ListBox x:Name="lbTesters" HorizontalAlignment="Left" Height="100" Margin="136,156,0,0" VerticalAlignment="Top" Width="100" ItemsSource="{Binding}"/>
+
     </Grid>
 </Window>

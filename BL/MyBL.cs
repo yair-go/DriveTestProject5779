@@ -30,14 +30,14 @@ namespace BL
         {
             // string TypeDAL = ConfigurationSettings.AppSettings.Get("TypeDS");
             string TypeDAL = "List";
-          //  MyDal = FactoryDAL.getDAL(TypeDAL);
+            MyDal = FactoryDAL.getDAL(TypeDAL);
         }
 
         #endregion
         #region Tester
         public void addTester(Tester tester)
         {
-            throw new NotImplementedException();
+            MyDal.AddTester(tester);
         }
 
         public void deleteTester(Tester tester)
@@ -47,7 +47,7 @@ namespace BL
 
         public List<Tester> getTestersList()
         {
-            throw new NotImplementedException();
+           return MyDal.getAllTesters();
         }
 
         public void updateTester(Tester tester, string name)

@@ -27,8 +27,11 @@ namespace PL
         {
             InitializeComponent();
             bl = MyBL.Instance;
-
             bl.addTester(new Tester("Nadav", 40));
+            lbTesters.DataContext = bl.getTestersList();
+           // bl.addTester(new Tester("Nadav", 40));
+
+
         }
     }
 }
