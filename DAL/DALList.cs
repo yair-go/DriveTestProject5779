@@ -10,6 +10,14 @@ namespace DAL
 {
     public class DALList : IDAL
     {
+        #region Singleton
+        private static readonly DALList instance = new DALList();
+        public static DALList Instance
+        {
+            get { return instance; }
+        }
+        #endregion
+
         public void AddTester()
         {
             throw new NotImplementedException();
@@ -26,10 +34,19 @@ namespace DAL
             DataSource.testers.Add(t);
         }
 
+        public void AddTester(Tester t)
+        {
+            DataSource.testers.Add(t);
+        }
+
         public void addTrainee(string id, string name, int age)
         {
             Trainee t = new Trainee(id, name, age);
         }
-       
+
+        public List<Tester> getAllTesters()
+        {
+            return DataSource.testers;
+        }
     }
 }

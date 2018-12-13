@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace DAL
         void AddTester();
         void AddTester(String name);
         void AddTester(String name ,int age);
+        void AddTester(Tester t);
+        List<Tester> getAllTesters();
         #endregion
 
         #region Trainee

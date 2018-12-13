@@ -11,6 +11,7 @@ namespace DS
     {
         public static List<Tester> testers;
         public static List<Trainee> trainees;
+        public static List<Test> tests;
 
         public DataSource()
         {
