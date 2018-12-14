@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Tester
+    public class Tester : ICloneable
     {
         private string name;
         private int age;
@@ -19,5 +19,14 @@ namespace BE
 
         public string Name { get => name; set => name = value; }
         public int Age { get => age; set => age = value; }
+
+        public object Clone()
+        {
+            return new Tester(Name, Age);
+        }
+        public override string ToString()
+        {
+            return Name + " " + Age;
+        }
     }
 }

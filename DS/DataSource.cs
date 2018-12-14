@@ -9,14 +9,15 @@ namespace DS
 {
     public class DataSource
     {
-        public static List<Tester> testers;
+        public static List<Tester> testers = new List<Tester>();
         public static List<Trainee> trainees;
         public static List<Test> tests;
 
-        public DataSource()
+        static DataSource()
         {
-            testers = new List<Tester>();
+            //testers = new List<Tester>();
             trainees = new List<Trainee>();
         }
+        
     }
 }

@@ -27,10 +27,22 @@ namespace PL
         {
             InitializeComponent();
             bl = MyBL.Instance;
+            CreateDemoEntites();
             bl.addTester(new Tester("Nadav", 40));
             lbTesters.DataContext = bl.getTestersList();
            // bl.addTester(new Tester("Nadav", 40));
 
+
+        }
+
+        private void CreateDemoEntites()
+        {
+            int[] idArray = new int[] { 1, 2, 3, 4, 5 };
+            foreach (int i in idArray)
+            {
+                bl.addTester(new Tester(i.ToString(), 20));
+                //  bl.addChild(new Child(i.ToString(), 20));
+            }
 
         }
     }
