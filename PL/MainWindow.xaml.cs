@@ -27,12 +27,9 @@ namespace PL
         {
             InitializeComponent();
             bl = MyBL.Instance;
-            CreateDemoEntites();
-            bl.addTester(new Tester("Nadav", 40));
+      //      CreateDemoEntites();
+            bl.addTester(new Tester("Nadav", new DateTime(1978,11,1)));
             lbTesters.DataContext = bl.getTestersList();
-           // bl.addTester(new Tester("Nadav", 40));
-
-
         }
 
         private void CreateDemoEntites()
@@ -41,9 +38,14 @@ namespace PL
             foreach (int i in idArray)
             {
                 bl.addTester(new Tester(i.ToString(), 20));
-                //  bl.addChild(new Child(i.ToString(), 20));
             }
 
+        }
+
+        private void pbTester_Click(object sender, RoutedEventArgs e)
+        {
+            AddTesterWindow addTesterWindow = new AddTesterWindow();
+            addTesterWindow.Show();
         }
     }
 }

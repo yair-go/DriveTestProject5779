@@ -19,16 +19,7 @@ namespace DAL
 
         private DALList() { }
         static DALList() { }
-        //private static void CreateDemoEntites()
-        //{
-        //    int[] idArray = new int[] { 1, 2, 3, 4, 5 };
-        //    foreach (int i in idArray)
-        //    {
-        //        AddTester(new Tester(i.ToString(), 20));
-        //        //  bl.addChild(new Child(i.ToString(), 20));
-        //    }
-
-        //}
+        
         #endregion
 
         #region Tester

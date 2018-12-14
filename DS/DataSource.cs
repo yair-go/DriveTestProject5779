@@ -9,15 +9,26 @@ namespace DS
 {
     public class DataSource
     {
-        public static List<Tester> testers = new List<Tester>();
+        public static List<Tester> testers;
         public static List<Trainee> trainees;
         public static List<Test> tests;
 
         static DataSource()
         {
-            //testers = new List<Tester>();
+            testers = new List<Tester>();
             trainees = new List<Trainee>();
+            CreateDemoEntites();
         }
-        
+
+        private static void CreateDemoEntites()
+        {
+            string[] idArray = new string[] {"aaa","bbb","ccc","ddd","eee" };
+            foreach (string name in idArray)
+            {
+                testers.Add(new Tester(name, new DateTime(1960,12,12)));
+            }
+
+        }
+
     }
 }
