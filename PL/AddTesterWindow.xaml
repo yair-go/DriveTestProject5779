@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL"
         xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PL.AddTesterWindow"
         mc:Ignorable="d"
-        Title="AddTesterWindow" Height="450" Width="800" Loaded="Window_Loaded_1">
+        Title="AddTesterWindow" Height="450" Width="800" Loaded="Window_Loaded_1" Closing="Window_Closing">
     <Window.Resources>
         <CollectionViewSource x:Key="testerViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:Tester}, CreateList=True}"/>
     </Window.Resources>

@@ -47,5 +47,10 @@ namespace PL
             AddTesterWindow addTesterWindow = new AddTesterWindow();
             addTesterWindow.Show();
         }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            lbTesters.DataContext = bl.getTestersList();
+        }
     }
 }

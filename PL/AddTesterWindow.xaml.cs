@@ -45,5 +45,10 @@ namespace PL
             MyBL.Instance.addTester(new Tester(nameTextBox.Text, birthdayDatePicker.DisplayDate));
             this.Close();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            int a;
+        }
     }
 }
