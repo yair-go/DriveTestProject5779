@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using BE;
 using DAL;
 
@@ -28,19 +29,20 @@ namespace BL
 
         static MyBL()
         {
-            // string TypeDAL = ConfigurationSettings.AppSettings.Get("TypeDS");
-            string TypeDAL = "List";
+             string TypeDAL = ConfigurationSettings.AppSettings.Get("TypeDS");
+            //string TypeDAL = "List";
             MyDal = FactoryDAL.getDAL(TypeDAL);
         }
 
         public int getMinimumAge()
         {
-            return -40;
+            return -1 * Int32.Parse(ConfigurationSettings.AppSettings.Get("MinimumTesterAge"));
+            //return -40;
         }
 
         public int getMaximumAge()
         {
-            return -70;
+            return -1 * Int32.Parse(ConfigurationSettings.AppSettings.Get("MaximumTesterAge"));
         }
 
         #endregion
