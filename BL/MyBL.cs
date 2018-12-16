@@ -33,6 +33,16 @@ namespace BL
             MyDal = FactoryDAL.getDAL(TypeDAL);
         }
 
+        public int getMinimumAge()
+        {
+            return -40;
+        }
+
+        public int getMaximumAge()
+        {
+            return -70;
+        }
+
         #endregion
         #region Tester
         public void addTester(Tester tester)

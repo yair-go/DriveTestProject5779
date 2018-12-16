@@ -23,8 +23,11 @@ namespace PL
     {
         public AddTesterWindow()
         {
+            
+
             InitializeComponent();
-            birthdayDatePicker.DisplayDateEnd = DateTime.Now.AddYears(-40);
+            birthdayDatePicker.DisplayDateEnd = DateTime.Now.AddYears(BL.MyBL.Instance.getMinimumAge());
+            birthdayDatePicker.DisplayDateStart = DateTime.Now.AddYears(BL.MyBL.Instance.getMaximumAge());
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
