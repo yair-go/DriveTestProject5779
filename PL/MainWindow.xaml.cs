@@ -30,6 +30,7 @@ namespace PL
       //      CreateDemoEntites();
             bl.addTester(new Tester("Nadav", new DateTime(1978,11,1)));
             lbTesters.DataContext = bl.getTestersList();
+            testerDataGrid.DataContext = bl.getTestersList();
         }
 
         private void CreateDemoEntites()
@@ -51,6 +52,15 @@ namespace PL
         private void Window_Activated(object sender, EventArgs e)
         {
             lbTesters.DataContext = bl.getTestersList();
+            testerDataGrid.DataContext = bl.getTestersList();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Data.CollectionViewSource testerViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("testerViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // testerViewSource.Source = [generic data source]
         }
     }
 }

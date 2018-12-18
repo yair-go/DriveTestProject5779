@@ -46,6 +46,7 @@ namespace BL
         }
 
         #endregion
+
         #region Tester
         public void addTester(Tester tester)
         {
