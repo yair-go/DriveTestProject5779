@@ -11,11 +11,21 @@ namespace BE
         private string name;
         private int age;
         private DateTime birthday;
+        private bool[,] schedule = new bool[5,6];
 
+        #region Constructor
         public Tester(string name, DateTime birthday)
         {
             this.Name = name;
             this.Birthday = birthday;
+            initilazeSchedule();
+        }
+
+        private void initilazeSchedule()
+        {
+            for (var day = DayOfWeek.Sunday; day < DayOfWeek.Friday; day++)
+                for (int hour = 0; hour < 6; hour++)
+                    schedule[(int)day, hour] = false;
         }
 
         public Tester(string name, int age)
@@ -24,17 +34,37 @@ namespace BE
           //  this.Age = age;
         }
 
-       
+        public Tester(string name,  DateTime birthday, bool[,] schedule)
+        {
+            this.name = name;
+            this.birthday = birthday;
+            this.schedule = schedule;
+        }
+        #endregion
+
+        #region Properties
         public string Name { get => name; set => name = value; }
         public int Age {
             get { return (int)(DateTime.Now - Birthday).TotalDays/365; }
         }
         public DateTime Birthday { get => birthday; set => birthday = value; }
+        public bool[,] Schedule { get => schedule; set => schedule = value; }
+
+        #endregion
+
+        public bool isTesterWorkTime(DateTime dateTime)
+        {
+            if (dateTime.DayOfWeek > DayOfWeek.Thursday)
+                return false;
+            else return schedule[(int)dateTime.DayOfWeek, dateTime.Hour];
+            
+        }
 
         public object Clone()
         {
             return new Tester(Name, Birthday);
         }
+
         public override string ToString()
         {
             return Name + " " + Age;
