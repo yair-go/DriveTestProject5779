@@ -45,7 +45,8 @@ namespace DAL
         }
         public List<Tester> getAllTesters()
         {
-            return DataSource.testers.Clone().ToList();
+            return DataSource.testers.Select(t => (Tester) t.Clone()).ToList();
+            //return DataSource.testers.Clone().ToList();
         }
         #endregion
 
@@ -54,6 +55,21 @@ namespace DAL
             Trainee t = new Trainee(id, name, age);
         }
 
-       
+        public void AddTest()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddTest(Test t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Test> getTests(Func<Test,bool> predicate = null)
+        {
+            if (predicate!=null)
+                return DataSource.tests.Where(predicate).ToList();
+            else return DataSource.tests.Select(t => (Test)t.Clone()).ToList();
+        }
     }
 }

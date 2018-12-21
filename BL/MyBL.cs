@@ -63,6 +63,11 @@ namespace BL
            return MyDal.getAllTesters();
         }
 
+        public object getTestsList()
+        {
+            return MyDal.getTests(null);
+        }
+
         public void updateTester(Tester tester, string name)
         {
             throw new NotImplementedException();

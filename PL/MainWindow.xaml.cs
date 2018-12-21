@@ -29,8 +29,6 @@ namespace PL
             bl = MyBL.Instance;
       //      CreateDemoEntites();
             bl.addTester(new Tester("Nadav", new DateTime(1978,11,1)));
-            lbTesters.DataContext = bl.getTestersList();
-            testerDataGrid.DataContext = bl.getTestersList();
         }
 
         private void CreateDemoEntites()
@@ -51,7 +49,7 @@ namespace PL
 
         private void Window_Activated(object sender, EventArgs e)
         {
-            lbTesters.DataContext = bl.getTestersList();
+            lbTesters.DataContext = bl.getTestsList();
             testerDataGrid.DataContext = bl.getTestersList();
         }
 

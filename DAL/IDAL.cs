@@ -22,6 +22,11 @@ namespace DAL
         void addTrainee(String id,String name, int age);
         #endregion
 
+        #region Test
+        void AddTest();
+        void AddTest(Test t);
+        List<Test> getTests(Func<Test, bool> predicate);
+        #endregion
 
     }
 }
