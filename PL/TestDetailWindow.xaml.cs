@@ -27,8 +27,11 @@ namespace PL
 
         public TestDetailWindow(Test test)
         {
+            
             InitializeComponent();
-            DataContext = test;
+          
+            gridDetails.DataContext = test;
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

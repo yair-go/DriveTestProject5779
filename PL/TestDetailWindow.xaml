@@ -10,9 +10,9 @@
     <Window.Resources>
         <CollectionViewSource x:Key="testViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:Test}, CreateList=True}"/>
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="gridDetails">
 
-        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="130,69,0,0" HorizontalAlignment="Left" DataContext="{StaticResource testViewSource}">
+        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="130,69,0,0" HorizontalAlignment="Left" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -23,7 +23,7 @@
             <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="ID:"/>
             <TextBox x:Name="iDTextBox" Width="120" VerticalAlignment="Center" Text="{Binding ID, Mode=OneWay}" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
         </Grid>
-        <Grid x:Name="grid2" DataContext="{StaticResource testViewSource}" HorizontalAlignment="Left" Margin="130,135,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid2"  HorizontalAlignment="Left" Margin="130,135,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0"/>
                 <ColumnDefinition Width="67"/>
