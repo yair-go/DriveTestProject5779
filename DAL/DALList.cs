@@ -71,5 +71,12 @@ namespace DAL
                 return DataSource.tests.Where(predicate).ToList();
             else return DataSource.tests.Select(t => (Test)t.Clone()).ToList();
         }
+
+        public List<Tester> getTesters(Func<Tester, bool> predicate = null)
+        {
+            if (predicate != null)
+                return DataSource.testers.Where(predicate).ToList();
+            else return DataSource.testers.Select(t => (Tester)t.Clone()).ToList();
+        }
     }
 }

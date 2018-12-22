@@ -60,7 +60,7 @@ namespace BL
 
         public List<Tester> getTestersList()
         {
-           return MyDal.getAllTesters();
+           return MyDal.getTesters();
         }
 
         public object getTestsList()

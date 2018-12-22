@@ -15,6 +15,7 @@ namespace DAL
         void AddTester(String name ,int age);
         void AddTester(Tester t);
         List<Tester> getAllTesters();
+        List<Tester> getTesters(Func<Tester, bool> predicate = null);
         #endregion
 
         #region Trainee
