@@ -27,6 +27,8 @@ namespace BE
             get { return id.ToString("00000000"); }
         }
 
+        public DateTime TestDate { get => testDate; }
+
         public object Clone()
         {
             return new Test(testDate,id);

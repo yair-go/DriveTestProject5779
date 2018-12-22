@@ -60,5 +60,13 @@ namespace PL
             // Load data by setting the CollectionViewSource.Source property:
             // testerViewSource.Source = [generic data source]
         }
+
+        private void lbTesters_SelectionChanged(object sender, MouseButtonEventArgs e)
+        {
+            TestDetailWindow testDetailWindow = new TestDetailWindow(((sender as ListBox).SelectedItem as Test));
+            testDetailWindow.Show();
+        }
+
+        
     }
 }
