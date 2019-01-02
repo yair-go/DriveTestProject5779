@@ -63,7 +63,7 @@ namespace BL
            return MyDal.getTesters();
         }
 
-        public object getTestsList()
+        public List<Test> getTestsList()
         {
             return MyDal.getTests(null);
         }
@@ -81,6 +81,14 @@ namespace BL
         public void updateTester(Tester tester, int cost, string minmax)
         {
             throw new NotImplementedException();
+        }
+        #endregion
+
+        #region Test
+
+        public List<Test> getTests(Func<Test, bool> predicate)
+        {
+            return MyDal.getTests(predicate);
         }
         #endregion
     }

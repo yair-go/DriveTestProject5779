@@ -49,7 +49,7 @@ namespace PL
 
         private void Window_Activated(object sender, EventArgs e)
         {
-            lbTesters.DataContext = bl.getTestsList();
+            lbTesters.DataContext = bl.getTests(t => t.ID.Contains(tbFilterTestByName.Text));
             testerDataGrid.DataContext = bl.getTestersList();
         }
 
@@ -67,6 +67,9 @@ namespace PL
             testDetailWindow.Show();
         }
 
-        
+        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            lbTesters.DataContext = bl.getTests(t => t.ID.Contains((sender as TextBox).Text));
+        }
     }
 }

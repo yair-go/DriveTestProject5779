@@ -17,5 +17,14 @@ namespace BL
         void updateTester(Tester tester, int cost, string minmax);
         List<Tester> getTestersList();
         #endregion
+
+        #region Test
+
+        List<Test> getTestsList();
+        List<Test> getTests(Func<Test, bool> predicate);
+
+
+        #endregion
+
     }
 }

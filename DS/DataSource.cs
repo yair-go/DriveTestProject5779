@@ -23,11 +23,13 @@ namespace DS
 
         private static void CreateDemoEntites()
         {
-            string[] idArray = new string[] {"aaa","bbb","ccc","ddd","eee" };
+            Random random = new Random(DateTime.Now.Millisecond);
+            string[] idArray = new string[] {"aaa","bbb","ccc","ddd","eee","fff","ggg","hhh","iii","jjj","kkk" };
             foreach (string name in idArray)
             {
-                testers.Add(new Tester(name, new DateTime(1960,12,12)));
-                tests.Add(new Test(DateTime.Now.AddDays(7)));
+                int year = random.Next(1948, 1978);
+                testers.Add(new Tester(name, new DateTime(year,12,12)));
+                tests.Add(new Test(DateTime.Now.AddDays(random.Next(100,1000))));
             }
             
         }

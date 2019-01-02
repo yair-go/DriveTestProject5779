@@ -13,16 +13,17 @@
     <Grid DataContext="{StaticResource testerViewSource}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="413*"/>
-            <ColumnDefinition Width="379*"/>
+            <ColumnDefinition Width="183*"/>
+            <ColumnDefinition Width="196*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="lbTesters" HorizontalAlignment="Left" Height="210" Margin="135.773,62,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding}" Grid.Column="1" MouseDoubleClick="lbTesters_SelectionChanged"/>
+        <ListBox x:Name="lbTesters" HorizontalAlignment="Left" Height="210" Margin="136,62,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding}" Grid.Column="1" MouseDoubleClick="lbTesters_SelectionChanged" Grid.ColumnSpan="2"/>
         <Button x:Name="pbTester" Content="Add Tetser" HorizontalAlignment="Left" Margin="55,79,0,0" VerticalAlignment="Top" Width="75" Click="pbTester_Click"/>
-        <DataGrid x:Name="testerDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="107,126,13.227,134" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="testerDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="107,126,13,134" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="ageColumn" Binding="{Binding Age}" Header="Age" IsReadOnly="True" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
-
+        <TextBox x:Name="tbFilterTestByName" Text ="" HorizontalAlignment="Left" Margin="55,200,0,0" Height="60" PreviewKeyDown="TextBox_PreviewKeyDown"></TextBox>
     </Grid>
 </Window>
