@@ -67,7 +67,7 @@ namespace PL
             testDetailWindow.Show();
         }
 
-        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void tbFilterTestByName_TextChanged(object sender, TextChangedEventArgs e)
         {
             lbTesters.DataContext = bl.getTests(t => t.ID.Contains((sender as TextBox).Text));
         }
