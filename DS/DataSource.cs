@@ -31,7 +31,12 @@ namespace DS
                 testers.Add(new Tester(name, new DateTime(year,12,12)));
                 tests.Add(new Test(DateTime.Now.AddDays(random.Next(100,1000))));
             }
-            
+
+           
+            foreach (var item in Enumerable.Range(13, 10000))
+            {
+                tests.Add(new Test(DateTime.Now.AddDays(random.Next(100, 1000))));
+            }
         }
 
     }
