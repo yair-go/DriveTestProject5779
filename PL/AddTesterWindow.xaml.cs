@@ -45,7 +45,7 @@ namespace PL
 
         private void pbAddTester_Click(object sender, RoutedEventArgs e)
         {
-            MyBL.Instance.addTester(new Tester(nameTextBox.Text, birthdayDatePicker.DisplayDate));
+            MyBL.Instance.addTester(new Tester(nameTextBox.Text, birthdayDatePicker.DisplayDate,1));
             this.Close();
         }
 

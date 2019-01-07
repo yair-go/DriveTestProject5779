@@ -28,7 +28,7 @@ namespace PL
             InitializeComponent();
             bl = MyBL.Instance;
       //      CreateDemoEntites();
-            bl.addTester(new Tester("Nadav", new DateTime(1978,11,1)));
+            bl.addTester(new Tester("Nadav", new DateTime(1978,11,1),1));
         }
 
         private void CreateDemoEntites()
@@ -50,6 +50,7 @@ namespace PL
         private void Window_Activated(object sender, EventArgs e)
         {
             lbTesters.DataContext = bl.getTests(t => t.ID.Contains(tbFilterTestByName.Text));
+            (lbTesters.DataContext as List<Test>).Sort();
             testerDataGrid.DataContext = bl.getTestersList();
         }
 

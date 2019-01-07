@@ -2,7 +2,7 @@
 
 namespace BE
 {
-    public class Test : ICloneable
+    public class Test : ICloneable,IComparable
     {
         private int id = Configuration.CurrentTestID;
 
@@ -32,6 +32,11 @@ namespace BE
         public object Clone()
         {
             return new Test(testDate,id);
+        }
+
+        public int CompareTo(object obj)
+        {
+            return testDate.CompareTo((obj as Test).testDate );
         }
 
         public override string ToString()

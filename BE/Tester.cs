@@ -9,15 +9,17 @@ namespace BE
     public class Tester : ICloneable
     {
         private string name;
+        private int id;
         private int age;
         private DateTime birthday;
         private bool[,] schedule = new bool[5,6];
 
         #region Constructor
-        public Tester(string name, DateTime birthday)
+        public Tester(string name, DateTime birthday, int id)
         {
             this.Name = name;
             this.Birthday = birthday;
+            this.id = id;
             initilazeSchedule();
         }
 
@@ -50,6 +52,11 @@ namespace BE
         public DateTime Birthday { get => birthday; set => birthday = value; }
         public bool[,] Schedule { get => schedule; set => schedule = value; }
 
+        public string ID {
+            get { return id.ToString("000000000");    }
+        }
+       
+
         #endregion
 
         public bool isTesterWorkTime(DateTime dateTime)
@@ -62,7 +69,7 @@ namespace BE
 
         public object Clone()
         {
-            return new Tester(Name, Birthday);
+            return new Tester(Name, Birthday, id);
         }
 
         public override string ToString()
